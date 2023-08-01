@@ -7,7 +7,7 @@ function destroyer(arr:any[]) {
    let args =  Array.from(arguments).slice(1); //arguments is bascially a non array consisting of the array passed in, and then the numbers that are additional, so we convert to array using from
    //use .slice method to remove the array at the beginning of the array... 
     return arr.filter(element => {
-        !args.includes(element);
+        return !args.includes(element);
     })
 
   }
