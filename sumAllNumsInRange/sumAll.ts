@@ -4,11 +4,17 @@
 //I will use a recursive helper function to aid my main function... 
 
 function sumAll(arr: number[]) {
-  
+  let temp = arr.sort((a:number,b:number) => {
+    return a - b; 
+  }); //this ensures that the numbers are in ascending order
+  return recur(temp[0], temp[1]); //uses the recursive function to calculate the sum of all numbers from n to m inclusive... 
 }
 
 function recur(numOne: number, numTwo: number){
-
+    if(numOne === numTwo){
+        return numTwo;
+    }
+    return numOne + recur(++numOne, numTwo); 
 }
 
 sumAll([1, 4]); //should return the same thing as sumAll([4,1]): 10 
