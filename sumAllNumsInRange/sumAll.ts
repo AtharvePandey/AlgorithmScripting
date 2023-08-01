@@ -17,4 +17,4 @@ function recur(numOne: number, numTwo: number){
     return numOne + recur(++numOne, numTwo); 
 }
 
-sumAll([1, 4]); //should return the same thing as sumAll([4,1]): 10 
+console.log(sumAll([1, 4])); //should return the same thing as sumAll([4,1]): 10 
