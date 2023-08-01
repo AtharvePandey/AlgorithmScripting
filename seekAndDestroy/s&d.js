@@ -2,9 +2,12 @@
 // Note: You have to use the arguments object.
 // basically arguments is an array available globally for any function that isn't an arrow function...
 function destroyer(arr) {
+    var args = Array.from(arguments).slice(1); //arguments is bascially a non array consisting of the array passed in, and then the numbers that are additional, so we convert to array using from
+    //use .slice method to remove the array at the beginning of the array... 
     return arr.forEach(function (element) {
-        if (element in arguments) {
-            arr.splice(arr.indexOf(element), 1);
+        if (args.includes(element)) {
+            var indexToRemove = arr.indexOf(element);
+            arr.splice(indexToRemove, 1);
         }
     });
 }

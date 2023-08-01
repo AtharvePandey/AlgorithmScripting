@@ -4,11 +4,16 @@
 // basically arguments is an array available globally for any function that isn't an arrow function...
 
 function destroyer(arr:any[]) {
-    return arr.forEach((element) => {
-        if(element in arguments){
-            arr.splice(arr.indexOf(element), 1); 
+   let args =  Array.from(arguments).slice(1); //arguments is bascially a non array consisting of the array passed in, and then the numbers that are additional, so we convert to array using from
+   //use .slice method to remove the array at the beginning of the array... 
+
+   return arr.forEach(element => {
+        if(args.includes(element)){
+            let indexToRemove = arr.indexOf(element); 
+            arr.splice(indexToRemove,1); 
         }
-    })
+   });
+
   }
   
   console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3)); //should return and array with [1,1], since 2 and 3 are elements that need to be removed...
