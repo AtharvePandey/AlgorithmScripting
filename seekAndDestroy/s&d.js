@@ -5,7 +5,7 @@ function destroyer(arr) {
     var args = Array.from(arguments).slice(1); //arguments is bascially a non array consisting of the array passed in, and then the numbers that are additional, so we convert to array using from
     //use .slice method to remove the array at the beginning of the array... 
     return arr.filter(function (element) {
-        !args.includes(element);
+        return !args.includes(element);
     });
 }
 console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3)); //should return and array with [1,1], since 2 and 3 are elements that need to be removed...
