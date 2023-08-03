@@ -6,12 +6,18 @@
 function myReplace(str, before, after) {
     var arr = str.split(" ");
     if (arr.indexOf(before) < 0) {
-        return arr.join(" "); //if the word to replace is not even in the sentence, then just return the sentence given...
+        return str; // If the word to replace is not in the sentence, return the original sentence.
     }
     else {
-        arr.forEach(function (word) {
-            return word === before ? word = after : word = word;
-        });
+        var index = arr.indexOf(before);
+        // Preserve the case of the first character in the original word
+        if (/^[A-Z]/.test(before)) {
+            after = after.charAt(0).toUpperCase() + after.slice(1);
+        }
+        else {
+            after = after.charAt(0).toLowerCase() + after.slice(1);
+        }
+        arr.splice(index, 1, after);
         return arr.join(" ");
     }
 }
