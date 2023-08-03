@@ -6,8 +6,25 @@
 // For example, for the input GCG, return [["G", "C"], ["C","G"], ["G", "C"]]
 // The character and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.
 
-function pairElement(str) {
-    return str;
+function pairElement(str:string) {
+    let retArr = [[]];
   }
   
   pairElement("GCG");
+
+
+  
+  function getCompliment(nucleotide: string):string{
+    switch (nucleotide) {
+        case "A":
+            return "T";
+        case "C":
+            return "G";
+        case "T":
+            return "A";
+        case "G": 
+            return "C";
+        default:
+            return "";
+    }
+  }
