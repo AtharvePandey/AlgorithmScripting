@@ -6,8 +6,8 @@ function fearNotLetter(str:string) {
     let strArr = strToArr(str); 
     let j = 0;
     for(let i = 1; i<strArr.length; i++){
-        if(strArr[i] !== ++strArr[j].toString()){
-            return strArr[j];
+        if(strArr[i].charCodeAt(0) !== strArr[j].charCodeAt(0) + 1){
+            return String.fromCharCode(strArr[j].charCodeAt(0) + 1);
         }else{
             j++;
         }
