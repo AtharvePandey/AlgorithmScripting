@@ -7,8 +7,21 @@
 // but not sorted
 
 function uniteUnique(arr:number[]) {
-    return arr;
+    let twoD: number[][] = [];
+    for(let i = 0; i<arguments.length; i++){
+        twoD.push(arguments[i]);
+    }
+    let envirornment:number[] = [];
+    let retArr:number[] = []; 
+    twoD.forEach(subArr => {
+        for(let i = 0; i<subArr.length; i++){
+            if(!(envirornment.includes(subArr[i]))){
+                retArr.push(subArr[i]);
+                envirornment.push(subArr[i]);
+            }
+        }
+    });
+    return retArr; 
   }
   
-  uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
-  
+  uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);  //note the extra arrays can be accessed via the envirornment global variable;
