@@ -24,4 +24,4 @@ function uniteUnique(arr:number[]) {
     return retArr; 
   }
   
-  uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);  //note the extra arrays can be accessed via the envirornment global variable;
+  console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));  //note the extra arrays can be accessed via the envirornment global variable;

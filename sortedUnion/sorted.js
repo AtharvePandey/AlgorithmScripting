@@ -6,6 +6,20 @@
 // i.e [[1,2,3], [4,5,2,3,1,2,2]] should return [1,2,3,4,5]; we don't want to repeat numbers, and we want to add them in order
 // but not sorted
 function uniteUnique(arr) {
-    return arr;
+    var twoD = [];
+    for (var i = 0; i < arguments.length; i++) {
+        twoD.push(arguments[i]);
+    }
+    var envirornment = [];
+    var retArr = [];
+    twoD.forEach(function (subArr) {
+        for (var i = 0; i < subArr.length; i++) {
+            if (!(envirornment.includes(subArr[i]))) {
+                retArr.push(subArr[i]);
+                envirornment.push(subArr[i]);
+            }
+        }
+    });
+    return retArr;
 }
-uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]);
+console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1])); //note the extra arrays can be accessed via the envirornment global variable;
