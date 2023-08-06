@@ -9,7 +9,7 @@ function sumFibs(num:number) {
     }, 0);
   }
   
-  sumFibs(4);
+  console.log(sumFibs(4));
 
 
   //putting fib seq into array and then using reduce in the sumFibs function to calculate the sum of all odd digit...

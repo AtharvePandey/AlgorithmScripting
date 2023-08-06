@@ -3,17 +3,21 @@
 //The first seven numbers of the Fibonacci sequence are 0, 1, 1, 2, 3, 5 and 8.
 // For example, sumFibs(10) should return 10 because all odd Fibonacci numbers less than or equal to 10 are 1, 1, 3, and 5.
 function sumFibs(num) {
-    return num;
+    return fibIntoArr(num).reduce(function (sum, currNum) {
+        return sum += currNum % 2 !== 0 ? currNum < num ? num : 0 : 0; //add this number to the sum (initialized to zero) iff it is odd and less than num passed in...
+    }, 0);
 }
 sumFibs(4);
 //putting fib seq into array and then using reduce in the sumFibs function to calculate the sum of all odd digit...
 function fibIntoArr(numsInArr) {
     var retArr = [];
     if (numsInArr === 1) { //first number in sequence
-        return retArr.push(0);
+        retArr.push(0);
+        return retArr;
     }
     else if (numsInArr === 2) { //first two numbers in sequence... 
-        return retArr.push(0, 1);
+        retArr.push(0, 1);
+        return retArr;
     }
     else { //first n numbers in the sequence...
         retArr.push(0);
