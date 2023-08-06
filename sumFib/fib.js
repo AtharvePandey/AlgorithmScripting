@@ -2,9 +2,12 @@
 // The first two numbers in the Fibonacci sequence are 0 and 1. Every additional number in the sequence is the sum of the two previous numbers. 
 //The first seven numbers of the Fibonacci sequence are 0, 1, 1, 2, 3, 5 and 8.
 // For example, sumFibs(10) should return 10 because all odd Fibonacci numbers less than or equal to 10 are 1, 1, 3, and 5.
+//WE NEED A SET NUMBER OF FIB NUMBERS IN THE ARRAY, RATHER THAN MAKING ONLY THE FIRST N NUMBERS...WHY NOT JUST ADD THE FIRST 200? 
 function sumFibs(num) {
-    return fibIntoArr(num).reduce(function (sum, currNum) {
-        return sum += currNum % 2 !== 0 ? currNum < num ? num : 0 : 0; //add this number to the sum (initialized to zero) iff it is odd and less than num passed in...
+    return fibIntoArr(200).filter(function (curNum) {
+        return curNum <= num && curNum % 2 !== 0;
+    }).reduce(function (sum, val) {
+        return sum + val;
     }, 0);
 }
 console.log(sumFibs(4)); //should return 0, 1, 1, 2, 3, 5, 8; 1 + 1 + 3 = 5 ... 
@@ -28,4 +31,3 @@ function fibIntoArr(numsInArr) {
         return retArr;
     }
 }
-console.log(fibIntoArr(20)); //first 20 terms of the sequence... 
