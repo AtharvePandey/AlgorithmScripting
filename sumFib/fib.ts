@@ -9,7 +9,7 @@ function sumFibs(num: number) {
     }, 0);
 }
 
-console.log(sumFibs(4));
+console.log(sumFibs(4)); //should return 0, 1, 1, 2, 3, 5, 8; 1 + 1 + 3 = 5 ... 
 
 
 //putting fib seq into array and then using reduce in the sumFibs function to calculate the sum of all odd digit...
