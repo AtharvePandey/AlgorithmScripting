@@ -7,7 +7,7 @@ function sumFibs(num) {
         return sum += currNum % 2 !== 0 ? currNum < num ? num : 0 : 0; //add this number to the sum (initialized to zero) iff it is odd and less than num passed in...
     }, 0);
 }
-sumFibs(4);
+console.log(sumFibs(4));
 //putting fib seq into array and then using reduce in the sumFibs function to calculate the sum of all odd digit...
 function fibIntoArr(numsInArr) {
     var retArr = [];
