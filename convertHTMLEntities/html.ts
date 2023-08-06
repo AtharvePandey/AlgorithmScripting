@@ -2,7 +2,13 @@
 // i.e convertHTML("Dolce & Gabbana") should return the string Dolce &amp; Gabbana
 
 function convertHTML(str) {
-    return str;
+    let obj = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&apos;'
+    }
   }
   
   convertHTML("Dolce & Gabbana");ll
