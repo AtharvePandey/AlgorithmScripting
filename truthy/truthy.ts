@@ -20,6 +20,11 @@ function truthCheck(collection:object[], pre:string):boolean {
         case "number":
             if(thing !== 0){
                 return true;
+            }
+            if(Number.isNaN(thing)){
+                return false; 
+            }if(thing === null){
+                return false; 
             }else{
                 return false;
             }
