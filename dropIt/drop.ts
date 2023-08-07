@@ -6,11 +6,11 @@
 
 function dropElements(arr: number[], func: (any)) {
     let i = 0;
-     while(func(arr[i])){
+     while(!func(arr[i])){
         arr.shift(); 
         i++;
      }
      return arr; 
   }
   
-  console.log(dropElements([1, 2, 3], function(n) {return n < 3; }));
+  console.log(dropElements([1, 2, 3], function(n) {return n < 3; })); //should return [3]
