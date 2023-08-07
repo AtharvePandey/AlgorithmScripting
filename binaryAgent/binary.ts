@@ -6,13 +6,14 @@
 function binaryAgent(str:string) {
     let retSentence = "";
     str.split(" ").forEach(sequence => {
-        retSentence.concat(toBinary(sequence))
-    })
+        retSentence += binaryToText(sequence)
+    });
+    return retSentence; 
 }
 
 
-function toBinary(str:string):string{
-    return ""
+function binaryToText(str:string):string{
+    return String.fromCharCode(parseInt(str,2)); //this line is from the library for JS...
 }
 
 
