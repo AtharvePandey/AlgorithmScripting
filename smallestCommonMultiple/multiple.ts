@@ -15,7 +15,7 @@ function smallestCommons(arr) {
 
   }
   
-  smallestCommons([1,5]);
+  console.log(smallestCommons([1,5])); //should print 60...
 
 //the process to calculate least common multiple between two numbers is to multiply two numbers and then divide by the gcd of both of the numbers
 //the above is by mathamatical definition...
