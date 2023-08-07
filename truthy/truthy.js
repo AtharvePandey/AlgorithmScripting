@@ -17,6 +17,12 @@ function istruthy(thing) {
             if (thing !== 0) {
                 return true;
             }
+            if (Number.isNaN(thing)) {
+                return false;
+            }
+            if (thing === null) {
+                return false;
+            }
             else {
                 return false;
             }
