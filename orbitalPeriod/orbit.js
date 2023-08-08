@@ -18,7 +18,7 @@ function orbitalPeriod(arr) {
     var GM = 398600.4418;
     var earthRadius = 6367.4447;
     var retArr = [];
-    arr.foreach(function (obj) {
+    arr.forEach(function (obj) {
         var a = 2 * Math.PI;
         var b = Math.sqrt((Math.pow(earthRadius + obj.avgAlt, 3)) / GM);
         var orbitalPeriod = Math.round(a * b);

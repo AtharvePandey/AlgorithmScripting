@@ -17,11 +17,11 @@
 //note a is actually just earthRadius + obg.avgAlt...
 
 
-function orbitalPeriod(arr) {
+function orbitalPeriod(arr: any[]) {
     const GM = 398600.4418;
     const earthRadius = 6367.4447;
     let retArr: any[] = [];
-    arr.foreach(obj => {
+    arr.forEach(obj => {
         const a = 2 * Math.PI; 
         const b = Math.sqrt((Math.pow(earthRadius + obj.avgAlt,3))/GM);
         const orbitalPeriod = Math.round(a * b); 
