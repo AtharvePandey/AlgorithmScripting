@@ -12,7 +12,13 @@ function addTogether() {
     if (arguments.length == 1) { //case where we need to return a function else, undefined...
         let input = arguments[0];
         if (typeof input == "number") { //case where we return a closure...
-            return (num: number) => input + num;
+            return (num: number) => {
+                if(typeof num == "number"){
+                    return input + num; 
+                }else{
+                    return undefined; 
+                }
+            };
         } else {
             return undefined;
         }

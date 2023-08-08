@@ -9,7 +9,14 @@ function addTogether() {
     if (arguments.length == 1) { //case where we need to return a function else, undefined...
         var input_1 = arguments[0];
         if (typeof input_1 == "number") { //case where we return a closure...
-            return function (num) { return input_1 + num; };
+            return function (num) {
+                if (typeof num == "number") {
+                    return input_1 + num;
+                }
+                else {
+                    return undefined;
+                }
+            };
         }
         else {
             return undefined;
