@@ -13,22 +13,17 @@
 // The array will contain objects in the format {name: 'name', avgAlt: avgAlt}.
 // The values should be rounded to the nearest whole number. The body being orbited is Earth.
 // The radius of the earth is 6367.4447 kilometers, and the GM value of earth is 398600.4418 km3s-2.
-
 //note a is actually just earthRadius + obg.avgAlt...
-
-
 function orbitalPeriod(arr) {
-    const GM = 398600.4418;
-    const earthRadius = 6367.4447;
-    let retArr: any[] = [];
-    arr.foreach(obj => {
-        const a = 2 * Math.PI; 
-        const b = Math.sqrt((Math.pow(earthRadius + obj.avgAlt,3))/GM);
-        const orbitalPeriod = Math.round(a * b); 
-        retArr.push({name:obj.name, orbitalPeriod: orbitalPeriod});
+    var GM = 398600.4418;
+    var earthRadius = 6367.4447;
+    var retArr = [];
+    arr.foreach(function (obj) {
+        var a = 2 * Math.PI;
+        var b = Math.sqrt((Math.pow(earthRadius + obj.avgAlt, 3)) / GM);
+        var orbitalPeriod = Math.round(a * b);
+        retArr.push({ name: obj.name, orbitalPeriod: orbitalPeriod });
     });
-    return retArr; 
-
-  }
-  
-  console.log(orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}])); //should return 86400
+    return retArr;
+}
+console.log(orbitalPeriod([{ name: "sputnik", avgAlt: 35873.5553 }])); //should return 86400
